@@ -21,7 +21,7 @@ $ nano ~/.bashrc #or nano ~/.profile
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export GOPROXY=https://repo.asax.ir/repository/golang-proxy
+export GOPROXY=https://localhost/repository/<repository-name>
 #Save the changes and exit the file.
 #After that, enter the following commands in shell.
 go env -w 'GOSUMDB=sum.golang.org https://nexus.example.com/repository/golang-sum-proxy'
