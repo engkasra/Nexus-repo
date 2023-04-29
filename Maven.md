@@ -1,9 +1,9 @@
 ## Installing JDK on Linux/Ubuntu
 
 #### step 1: Download the JDK Binaries
+Go to the [JDK-website](https://jdk.java.net/13/) Copy the download link for Linux/x64 build.<br>Then use the below command to download and extract it.
 ```bash
 $ wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
-#for get new version: https://jdk.java.net/13/
 $ tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
 $ mv jdk-13.0.1 /opt/
 ```
