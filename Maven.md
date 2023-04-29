@@ -34,3 +34,22 @@ $ wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apach
 $ tar -xvf apache-maven-3.6.3-bin.tar.gz
 $ mv apache-maven-3.6.3 /opt/
 ```
+#### Step 2: Setting M2_HOME and Path Variables
+Add the following lines to the user profile file (.profile).
+```bash
+M2_HOME='/opt/apache-maven-3.6.3'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
+```
+Relaunch the terminal or execute `source .profile` to apply the changes.
+
+### Step 3: Verify the Maven installation
+Execute `mvn -version` command and it should produce the following output.
+```bash
+$ mvn -version
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /opt/apache-maven-3.6.3
+Java version: 13.0.1, vendor: Oracle Corporation, runtime: /opt/jdk-13.0.1
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-47-generic", arch: "amd64", family: "unix"
+```
