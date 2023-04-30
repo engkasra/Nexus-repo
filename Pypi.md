@@ -1,4 +1,4 @@
-Manualy:
+Manually:
 
 ```powershell
 Set-Location C:\users\test\Desktop\azure-devops
