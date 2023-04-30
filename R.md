@@ -18,3 +18,34 @@ sudo apt install --no-install-recommends r-base
 ```
 If prompted to confirm installation, press y to continue.<br> The --no-install-recommends arguments ensures that no extra packages are installed.<br>
 Since this tutorial will explore installing an example package for every user on the system, start R as root so that the libraries will be available to all users automatically.<br> Alternatively, if you run the R command without sudo, a personal library can be set up for your user.
+
+### Step 2 — Connecting R to Nexus repository
+change content in `Rprofile.site` or make file in `~/.Rprofile`
+1. `nano /etc/R/Rprofile.site`
+2. `nano ~/.Rprofile`
+and add following codes:
+```bash
+# ## Example of .Rprofile
+# options(width=65, digits=5)
+# options(show.signif.stars=FALSE)
+# setHook(packageEvent("grDevices", "onLoad"),
+#         function(...) grDevices::ps.options(horizontal=FALSE))
+# set.seed(1234)
+# .First <- function() cat("\n   Welcome to R!\n\n")
+# .Last <- function()  cat("\n   Goodbye!\n\n")
+
+# ## Example of Rprofile.site
+# local({
+#  # add MASS to the default packages, set a CRAN mirror
+#  old <- getOption("defaultPackages"); r <- getOption("repos")
+#  r["CRAN"] <- "http://my.local.cran"
+#  options(defaultPackages = c(old, "MASS"), repos = r)
+#})
+
+## We set the cloud mirror, which is 'network-close' to everybody, as default
+local({
+    r <- getOption("repos")
+    r["CRAN"] <- "https://localhost/repository/<rep-name>"
+    options(repos = r)
+})
+```
