@@ -49,3 +49,5 @@ local({
     options(repos = r)
 })
 ```
+### Step 3 — Installing R packages
+`install.packages('txtplot')` or `install.packages("ggplot2")`
